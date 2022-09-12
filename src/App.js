@@ -27,7 +27,7 @@ function App() {
             });
     }
 
-    function searchChampMastery(event) {
+    function getGameData(event) {
         // handle the API call, hit our proxy server
 
         axios
@@ -42,7 +42,10 @@ function App() {
             });
     }
 
-    console.log(gameList);
+    function getChampIcon(champID){
+        console.log(champID)
+    }
+    
 
     return (
         <div className="App">
@@ -55,7 +58,7 @@ function App() {
                 <button onClick={(e) => searchForPlayer(e)}>
                     Search for player
                 </button>
-                <button onClick={(e) => searchChampMastery(e)}>
+                <button onClick={(e) => getGameData(e)}>
                     champ data
                 </button>
                 {gameList.length !== 0 ? (
@@ -71,7 +74,8 @@ function App() {
                                                 player {participantIndex + 1}:{" "}
                                                 {data.summonerName}, KDA:{" "}
                                                 {data.kills} / {data.deaths} /{" "}
-                                                {data.assits}
+                                                {data.assists}
+                                                <img width = "100" height= "100" src ={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/" + data.championName + ".png"}></img>
                                             </p>
                                         )
                                     )}
