@@ -64,10 +64,12 @@ function App() {
                 {gameList.length !== 0 ? (
                     <>
                         <p> We have data</p>
+                        
                         {gameList.map((gameData, index) => (
                             <>
                                 <h2>Game {index + 1}</h2>
                                 <div>
+                                    {console.log(gameData)}
                                     {gameData.info.participants.map(
                                         (data, participantIndex) => (
                                             <p>
@@ -76,6 +78,13 @@ function App() {
                                                 {data.kills} / {data.deaths} /{" "}
                                                 {data.assists}
                                                 <img width = "100" height= "100" src ={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/champion/" + data.championName + ".png"}></img>
+                                                <img width = "50" height= "50" src ={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/" + data.item0 + ".png"}></img>
+                                                <img width = "50" height= "50" src ={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/" + data.item1 + ".png"}></img>
+                                                <img width = "50" height= "50" src ={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/" + data.item2 + ".png"}></img>
+                                                <img width = "50" height= "50" src ={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/" + data.item3 + ".png"}></img>
+                                                <img width = "50" height= "50" src ={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/" + data.item4 + ".png"}></img>
+                                                <img width = "50" height= "50" src ={"http://ddragon.leagueoflegends.com/cdn/12.17.1/img/item/" + data.item5 + ".png"}></img>
+
                                             </p>
                                         )
                                     )}
